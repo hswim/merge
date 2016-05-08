@@ -1,0 +1,48 @@
+{
+    "name"         : "merge",
+    "version"      : "0.13.3",
+    "description"  : "A visual tool for wiring the Internet of Things",
+    "homepage"     : "http://breeze.att.io",
+    "license"      : "Apache-2.0",
+    "repository"   : {
+        "type":"git",
+        "url":"https://github.com/att-innovate/breeze-core.git"
+    },
+    "main"         : "red/red.js",
+    "bin"      : {
+        "breeze": "./bin/breeze",
+        "breeze-build": "./bin/breeze-build"
+    },
+    "scripts"      : {
+        "start": "node red.js",
+        "lint": "./node_modules/.bin/jshint nodejs test || exit 0",
+        "lintOrg": "./node_modules/.bin/jshint nodejs test --reporter=jslint",
+        "checkStyle": "./node_modules/.bin/jscs . || exit 0",
+        "test": "rm -rf coverage/* && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R xunit-file -r should  || exit 0",
+        "posttest": "./node_modules/.bin/istanbul check-coverage || exit 0"
+    },
+    "contributors": [ 
+        {"name": "Yehudit Hartman"},
+        {"name": "Olga Yasovsky"},
+        {"name": "Chen Fliesher"}
+    ],
+    "keywords": [
+        "node-red","att", "iot", "m2m", "flow"
+    ], 
+    "dependencies": {
+        "amqplib": "0.3.0",
+        "async": "0.9.0",
+        "basic-auth": "1.0.3",
+        "basic-auth-connect": "1.0.0",
+        "bcryptjs": "2.3.0",
+        "body-parser": "1.15.0"
+    },
+    "optionalDependencies": {
+        "bcrypt": "0.8.5"
+    },
+      "devDependencies": {
+    },
+    "engines": {
+        "node": "4.4.0"
+    }
+}
